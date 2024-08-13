@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 const pageTitle = "About Me";
 const identity = {
 	firstName: "Rober",
@@ -10,6 +12,13 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
+const links = [
+	{href: "/blog/", desc: "Blog"},
+	{href: "/", desc: "Home"}
+];
 ---
 
 
@@ -20,22 +29,23 @@ const goal = 3;
 	<meta name="viewport" content="width=device-width" />
 	<meta name="generator" content={Astro.generator} />
 	<title>{pageTitle}</title>
-	<style>
+	<style define:vars={{skillColor, fontWeight, textCase}}>
 		h1 {
 			color: purple;
 			font-size: 4rem;
 		}
 		.skill {
-			color: green;
-			font-weight: bold;
+			color: var(--skillColor);
+			font-weight: var(--fontWeight);
+			text-transform: var(--textCase);
 		}
 	</style>
 </head>
 <body>
 	<h1>{pageTitle}</h1>
-	<a href="/">Home</a>
-	<a href="/about/">About</a>
-	<a href="/blog/">Blog</a>
+	<ul>
+		{ links.map(link => <li><a href={link.href}>{link.desc}</a></li>) }
+	</ul>
 	<p>Here are a few facts about me:</p>
 	<ul>
 		<li>My name is: {identity.firstName}</li>
