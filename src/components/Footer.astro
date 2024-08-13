@@ -1,0 +1,28 @@
+---
+import Social from "./Social.astro";
+
+const socialNet = [
+    {platform: "github", url: "https://github.com/robermiranda"},
+    {platform: "portfolio", url: "https://portfolio-delta-lyart.vercel.app/"},
+    {platform: "linkedin", url: "https://www.linkedin.com/in/roberto-miranda-380664227/"}
+];
+---
+
+<style>
+    footer {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+</style>
+
+<footer>
+    <p>
+        Learn more about my projects on
+    </p>
+    {
+        socialNet.map(social =>
+            <Social url={social.url} platform={social.platform} />
+        )
+    }
+</footer>
