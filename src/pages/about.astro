@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';'../components/Navigation.astro';
 
 const pageTitle = "About Me";
 const identity = {
@@ -15,10 +16,6 @@ const goal = 3;
 const skillColor = "navy";
 const fontWeight = "bold";
 const textCase = "uppercase";
-const links = [
-	{href: "/blog/", desc: "Blog"},
-	{href: "/", desc: "Home"}
-];
 ---
 
 
@@ -43,9 +40,7 @@ const links = [
 </head>
 <body>
 	<h1>{pageTitle}</h1>
-	<ul>
-		{ links.map(link => <li><a href={link.href}>{link.desc}</a></li>) }
-	</ul>
+	<Navigation />
 	<p>Here are a few facts about me:</p>
 	<ul>
 		<li>My name is: {identity.firstName}</li>

@@ -1,11 +1,8 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';'../components/Navigation.astro';
 
 const pageTitle = "Home Page";
-const links = [
-	{href: "/about/", desc: "About me"},
-	{href: "/blog/", desc: "Blog"}
-];
 ---
 
 <html lang="en">
@@ -18,8 +15,6 @@ const links = [
 	</head>
 	<body>
 		<h1>{pageTitle}</h1>
-		<ul>
-			{ links.map(link => <li><a href={link.href}>{link.desc}</a></li>) }
-		</ul>
+		<Navigation />
 	</body>
 </html>

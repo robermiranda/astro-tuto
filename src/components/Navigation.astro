@@ -1,0 +1,11 @@
+---
+const links = [
+    {href: "/", desc: "Home"},
+	{href: "/about/", desc: "About me"},
+	{href: "/blog/", desc: "Blog"}
+];
+---
+
+<ul>
+    { links.map(link => <li><a href={link.href}>{link.desc}</a></li>) }
+</ul>
