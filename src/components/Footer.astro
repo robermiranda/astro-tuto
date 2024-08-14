@@ -10,7 +10,7 @@ const socialNet = [
 
 <style>
     footer {
-      display: flex;
+      display: grid;
       gap: 1rem;
       margin-top: 2rem;
     }
@@ -20,9 +20,11 @@ const socialNet = [
     <p>
         Learn more about my projects on
     </p>
+    <div>
     {
         socialNet.map(social =>
             <Social url={social.url} platform={social.platform} />
         )
     }
+    </div>
 </footer>
