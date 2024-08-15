@@ -7,6 +7,6 @@ const links = [
 ];
 ---
 
-<div class="nav-links">
+<div transition:animate="slide" class="nav-links">
     { links.map(link => <a href={link.href}>{link.desc}</a>) }
 </div>
